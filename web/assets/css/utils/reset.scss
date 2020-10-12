@@ -1,0 +1,36 @@
+/* http://meyerweb.com/eric/tools/css/reset/  */
+
+/* stylelint-disable */
+html, body, div, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, img, ol, ul, li, table,
+caption, tbody, thead, tr, th, td, article, aside,
+canvas, embed, figure, figcaption, footer, header,
+menu, nav, section, audio, video {
+  margin: 0;
+  padding: 0;
+}
+
+/* Include padding and border in elements' total width and height
+  Ref: https://www.freecodecamp.org/news/html-page-width-height/ */
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 5px 0 10px 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
