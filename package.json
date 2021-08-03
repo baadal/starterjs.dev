@@ -33,7 +33,7 @@
     "pm2:start": "run-s pm2:start:prep pm2:start:web",
     "pm2:stop": "pm2 stop starterjs.dev",
     "pm2:logs": "pm2 logs starterjs.dev",
-    "predeploy": "env-cmd -f env/.env.deploy ts-node starter/utils/pre-deploy.ts",
+    "predeploy": "env-cmd -f env/.env.deploy env-cmd -f env/.env ts-node starter/utils/pre-deploy.ts",
     "deploy:f": "env-cmd -f starter/env/.env.deploy.tmp run-s pm2:start:prep pm2:start:web",
     "deploy": "env-cmd -f starter/env/.env.deploy.tmp run-s pm2:start:prep pm2:stop pm2:start:web",
     "postdeploy": "rm -f starter/env/.env.deploy.tmp",
