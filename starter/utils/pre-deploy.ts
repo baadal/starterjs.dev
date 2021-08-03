@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import http from 'http';
 
+import { DEFAULT_PORT, DEFAULT_PORT_API } from '../const/values';
 import awsRegions from './aws-regions';
 import logger from './logger';
 
@@ -41,6 +42,10 @@ const fetchInstanceInfo = async () => {
 };
 
 (async () => {
+  const port = process.env.PORT || DEFAULT_PORT;
+  const portApi = process.env.PORT_API || DEFAULT_PORT_API;
+  const isSharedServer = port === portApi;
+
   const instanceInfo = await fetchInstanceInfo();
   if (!instanceInfo) {
     logger.error('[ERROR] Cannot fetch instance info (pre-deploy)');
@@ -63,8 +68,12 @@ const fetchInstanceInfo = async () => {
 
   const s3BucketName = process.env.BUCKET_NAME || '';
   if (!s3BucketName) {
-    logger.error(`[ERROR] Missing value for BUCKET_NAME: ${s3BucketName}`);
-    process.exit(1);
+    if (isSharedServer) {
+      logger.warn(`[WARN] Missing value for BUCKET_NAME: ${s3BucketName}`);
+    } else {
+      logger.error(`[ERROR] Missing value for BUCKET_NAME: ${s3BucketName}`);
+      process.exit(1);
+    }
   }
 
   let deployEnv = '';
@@ -72,7 +81,7 @@ const fetchInstanceInfo = async () => {
   deployEnv += `INSTANCE_REGION=${region}\n`;
   deployEnv += `INSTANCE_REGION_NAME=${regionName}\n`;
   deployEnv += `INSTANCE_REGION_ALIAS=${regionAlias}\n`;
-  deployEnv += `S3_BUCKET_NAME=${s3BucketName}\n`;
+  if (s3BucketName) deployEnv += `S3_BUCKET_NAME=${s3BucketName}\n`;
 
   const deployEnvFile = path.resolve(process.cwd(), 'starter/env/.env.deploy.tmp');
   writeFile(deployEnvFile, deployEnv);
