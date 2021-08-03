@@ -30,3 +30,7 @@ export interface HomePageData extends PageDataRoot {
 export interface NotFoundPageData extends PageDataRoot {
   message: string;
 }
+
+export interface DocsPageData extends PageDataRoot {
+  message: string;
+}

@@ -22,7 +22,13 @@ const Header = (props: HeaderProps) => {
           About
         </NavLink>
       </nav>
-      <div css={{ marginLeft: 'auto' }}>v{process.env.npm_package_version}</div>
+      <div css={{ marginLeft: 'auto' }}>
+        <NavLink to="/docs" exact activeClassName="active">
+          Docs
+        </NavLink>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>v{process.env.npm_package_version}</span>
+      </div>
     </header>
   );
 };
