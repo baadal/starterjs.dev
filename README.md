@@ -1,54 +1,23 @@
-# Starter.js
-PWA Starter Kit for building High-performance Modern Web Apps.
+# starterjs.dev
+This repo contains the source code and documentation powering [starterjs.dev](https://starterjs.dev/).
 
-**Live Demo**: https://demo.baadal.app
-
-## Intro
+## Starter.js
 [Starter.js](https://starterjs.dev/) is an opinionated lightweight starter kit for building Modern Web Apps using React. It comes with all the modern tooling, which one can directly configure. Starter.js is _framework-agnostic_, i.e. it does not depend on any particular React framework. If you would like to work within a framework, you can check out [Next.js](https://nextjs.org/) or [Gatsby.js](https://www.gatsbyjs.com/).
 
-## Setup
-You can clone the starter kit and run it on your local machine. 
+## Running locally
+You can run the site in this repo on your local machine. 
 
 ```bash
-git clone https://github.com/baadal/starter-app.git
-cd starter-app && npm install
+git clone https://github.com/baadal/starterjs.dev.git
+cd starterjs.dev && npm install
 npm start
 ```
-Now, open http://localhost:3000 in your browser. The starter kit also launches a local API endpoint on port [4000](http://localhost:4000).
+Now, open http://localhost:5000 in your browser. You will see the site running locally.
 
-You can run the starter kit in _production_ mode using `npm run start:prod` command.
+You can run the site in _production_ mode using `npm run start:prod` command.
 
-A **live demo** of the production build can be found here: https://demo.baadal.app
+## Contributing
+You are welcome to contribute to this repo and help us improve the documentation on the site.
+All the documentation currently exists in the `/web/pages/docs/` folder.
 
-## Stack
-* React
-* TypeScript
-* NodeJS
-* Express
-* RxJS
-* Babel
-* Webpack
-
-## Features
-* Server-side rendering (SSR)
-* CSS Modules, CSS-in-JS
-* Server-driven UI (SDUI)
-
-<!--
-Upcoming Features*
-    Serverless functions
-    Cloud Database
-    GraphQL
-    OAuth2/OpenID Connect
-Supported Cloud providers*
-    Amazon Web Services (AWS)
-    Microsoft Azure
-    Google Cloud & Firebase
-Supported Service providers*
-    Twilio & SendGrid
-    Stripe
-    GitHub
-    Baadal
-    Okta
-    Auth0
--->
+If youy face any issues, feel free to raise an issue on this GitHub repo.
