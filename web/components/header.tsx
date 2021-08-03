@@ -22,7 +22,7 @@ const Header = (props: HeaderProps) => {
           About
         </NavLink>
       </nav>
-      <h3>🐼</h3>
+      <div css={{ marginLeft: 'auto' }}>v{process.env.npm_package_version}</div>
     </header>
   );
 };

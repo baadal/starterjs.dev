@@ -32,8 +32,14 @@
   color: $text-color;
 }
 
+.ctaBox {
+  padding-top: 1.2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .docsDesc {
-  padding-top: 0.6rem;
   display: flex;
 }
 
@@ -44,12 +50,8 @@
   border-radius: 10px;
 }
 
-.bottomMsg {
-  text-align: right;
-}
-
 .emojiBig {
-  font-size: 1.3rem;
+  font-size: 2.8rem;
 }
 
 .punchline {

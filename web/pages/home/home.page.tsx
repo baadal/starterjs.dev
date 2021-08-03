@@ -12,7 +12,6 @@ class Home extends React.Component<HomeProps, HomeState> {
   render() {
     const { pageData } = this.props;
     const title = pageData?.title || '';
-    const description = pageData?.description || '';
     const message = pageData?.message || '';
     const siteTitle = pageData?.seo?.siteTitle || '';
 
@@ -20,37 +19,29 @@ class Home extends React.Component<HomeProps, HomeState> {
       <>
         <div className={styles.heroBanner}>
           <div className={styles.heroText}>
-            <a href="https://starterjs.dev/" target="_blank" rel="noreferrer">
-              {siteTitle}
-            </a>
-            <span className={styles.heroSplit}>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+            {siteTitle}
+            <span className={styles.heroSplit}>
+              &nbsp;&nbsp;
+              <span className={styles.emojiBig}>🐼</span>
+              &nbsp;&nbsp;
+            </span>
             <span className={styles.heroSubtext}>{title}</span>
           </div>
-          <div className={styles.punchline}>{description}</div>
         </div>
-        <div className={common.infoCard}>
-          <div>
-            Edit this page: <code>web/pages/home/home.page.tsx</code>
+        <div className={styles.ctaBox}>
+          <div className={styles.punchline}>{message}</div>
+          <div className={common.vspace2} />
+          <div className={styles.docsDesc}>
+            <Link to="/docs">
+              <div className={styles.docsItem}>
+                <span>Documentation</span>
+                <span>&nbsp;&nbsp;</span>
+                <small>
+                  <FaExternalLinkAlt />
+                </small>
+              </div>
+            </Link>
           </div>
-          <div className={common.infoCardItem}>
-            Link to this page: `<Link to="/">Home</Link>`
-          </div>
-        </div>
-        <div className={styles.docsDesc}>
-          <a href="https://starterjs.dev/docs" target="_blank" rel="noreferrer">
-            <div className={styles.docsItem}>
-              <span>Documentation</span>
-              <span>&nbsp;&nbsp;</span>
-              <small>
-                <FaExternalLinkAlt />
-              </small>
-            </div>
-          </a>
-        </div>
-        <div className={styles.bottomMsg}>
-          <span className={styles.emojiBig}>🚀</span>
-          <span>&nbsp;&nbsp;</span>
-          <em>{message}</em>
         </div>
       </>
     );

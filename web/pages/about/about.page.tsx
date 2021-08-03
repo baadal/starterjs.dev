@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { elapsedBuildTime } from 'starter/utils/env';
 import { PropsRoot } from 'model/common.model';
@@ -19,14 +18,8 @@ class About extends React.Component<AboutProps, AboutState> {
       <>
         <h2 className={common.pageTitle}>{title}</h2>
         <div>{description}</div>
-        <div className={common.infoCard}>
-          <div>
-            Edit this page: <code>web/pages/about/about.page.tsx</code>
-          </div>
-          <div className={common.infoCardItem}>
-            Link to this page: `<Link to="/about">About</Link>`
-          </div>
-        </div>
+        <div className={common.vspace2} />
+        <div className={common.vspace2} />
         <div>
           <small>
             <strong>Last build:</strong> <span className={common.textOlive}>{elapsed || '---'}</span>{' '}
