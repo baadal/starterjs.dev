@@ -27,6 +27,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+
+  // Image: https://pngtree.com/freepng/pink-watercolor-brushes_5054156.html
+  // Ref: https://css-tricks.com/perfect-full-page-background-image/
+  background: url(../images/watercolor-brush.png) no-repeat center 150px fixed;
+  background-size: contain;
+  background-color: azure;
 }
 
 #root {
